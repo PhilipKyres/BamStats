@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BamFights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Winner" Type="int" Nullable="false" />
+    <Property Name="Loser" Type="int" Nullable="false" />
+    <Property Name="Stance" Type="bit" />
+    <Property Name="FightDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BamNames">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BamFights__Loser__07C12930">
+    <End Role="BamNames" Type="Self.BamNames" Multiplicity="1" />
+    <End Role="BamFights" Type="Self.BamFights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BamNames">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BamFights">
+        <PropertyRef Name="Loser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BamFights__Winne__06CD04F7">
+    <End Role="BamNames" Type="Self.BamNames" Multiplicity="1" />
+    <End Role="BamFights" Type="Self.BamFights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BamNames">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BamFights">
+        <PropertyRef Name="Winner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BamModelStoreContainer">
+    <EntitySet Name="BamFights" EntityType="Self.BamFights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BamNames" EntityType="Self.BamNames" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BamFights__Loser__07C12930" Association="Self.FK__BamFights__Loser__07C12930">
+      <End Role="BamNames" EntitySet="BamNames" />
+      <End Role="BamFights" EntitySet="BamFights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BamFights__Winne__06CD04F7" Association="Self.FK__BamFights__Winne__06CD04F7">
+      <End Role="BamNames" EntitySet="BamNames" />
+      <End Role="BamFights" EntitySet="BamFights" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,174 @@
+﻿@model BamStats.ViewModels.BamStatsVM
+
+@{
+    ViewBag.Title = "Stats";
+}
+
+<h2>Statistical Information</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	@*
+    <table class="table">
+        <tr>
+            <th>
+                <span style="background-color: #bfefff">
+                    @Html.DisplayFor(model => model.Defender.Name)
+                </span> <br>
+            </th>
+            <th>
+                <span style="background-color: #ffb6c1">
+                    @Html.DisplayFor(model => model.Attacker.Name)
+                </span> <br>
+            </th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span style="background-color: #D1D0CE">
+                    <b>Current Matchup Statistics</b> <br/>
+                </span>
+                Wins vs @Html.DisplayFor(model => model.Attacker.Name): @Html.DisplayFor(model => model.DWinVsA) (@Html.DisplayFor(model => model.DWinRateVsA)%) <br />
+                Wins vs @Html.DisplayFor(model => model.Attacker.Name) in Defence: @Html.DisplayFor(model => model.DWinVsA) (@Html.DisplayFor(model => model.DWinRateVsA)%) FIX
+            </td>
+            <td>
+                <span style="background-color: #D1D0CE">
+                    <b>Current Matchup Statistics</b> <br />
+                </span>
+                Wins vs @Html.DisplayFor(model => model.Defender.Name): @Html.DisplayFor(model => model.AWinVsD) (@Html.DisplayFor(model => model.AWinRateVsD)%)<br />
+                Wins vs @Html.DisplayFor(model => model.Attacker.Name) in Attack: @Html.DisplayFor(model => model.DWinVsA) (@Html.DisplayFor(model => model.DWinRateVsA)%) FIX
+            </td>
+            <td>
+                <br />
+                @Html.DisplayFor(model => model.DWinVsA):@Html.DisplayFor(model => model.AWinVsD) (@Html.DisplayFor(model => model.DWinRateVsA)%) <br />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span style="background-color: #D1D0CE">
+                    <b>Overall BAM Statistics</b> <br />
+                    Win:Loss @Html.DisplayFor(model => model.DWinVsA)
+                </span>
+            </td>
+            <td>
+                <span style="background-color: #D1D0CE">
+                    <b>Overall BAM Statistics</b> <br />
+                </span>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+	*@
+    <div class="form-horizontal">
+        <h4>Statistics for this match up</h4>
+        <table class="table">
+			<tr>
+				<th></th>
+				<th colspan="2">
+					Current Match
+				</th>
+				<th colspan ="7">
+					Overall
+				</th>
+			</tr>
+			<tr>
+				<th>
+					BAM
+				</th>
+				<th>
+					Wins (Rate)
+				</th>
+				<th>
+					Wins In Stance (Rate)
+				</th>
+				<th>
+					Wins:Losses (Rate)
+				</th>
+				<th>
+					Wins:Losses (Rate) In Stance
+				</th>
+				<th>
+					Game Count
+				</th>
+			</tr>
+            <tr>
+                <td>
+                    <span style="background-color: #bfefff">
+                        @Html.DisplayFor(model => model.Defender.Name)
+                    </span>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DWinsCurrent) 
+					(@Html.DisplayFor(model => model.DWinRateCurrent)%)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DWinsInStanceCurrent)
+					(@Html.DisplayFor(model => model.DWinRateStanceCurrent)%)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DWinsOverall):@Html.DisplayFor(model => model.DLossesOverall)
+                    (@Html.DisplayFor(model => model.DWinRateOverall)%)
+                </td>
+				<td>
+					@Html.DisplayFor(model => model.DWinsInStanceOverall):@Html.DisplayFor(model => model.DLossesInStanceOverall)
+					(@Html.DisplayFor(model => model.DWinRateInStanceOverall)%)
+				</td>
+				<td>
+					@Html.DisplayFor(model => model.DGamesRecordedOverall)
+				</td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="background-color: #ffb6c1">
+                        @Html.DisplayFor(model => model.Attacker.Name)
+                    </span>
+                </td>
+				<td>
+					@Html.DisplayFor(model => model.AWinsCurrent)
+					(@Html.DisplayFor(model => model.AWinRateCurrent)%)
+				</td>
+				<td>
+					@Html.DisplayFor(model => model.AWinsInStanceCurrent)
+					(@Html.DisplayFor(model => model.AWinRateStanceCurrent)%)
+				</td>
+				<td>
+					@Html.DisplayFor(model => model.AWinsOverall):@Html.DisplayFor(model => model.ALossesOverall)
+					(@Html.DisplayFor(model => model.AWinRateOverall)%)
+				</td>
+				<td>
+					@Html.DisplayFor(model => model.AWinsInStanceOverall):@Html.DisplayFor(model => model.ALossesInStanceOverall)
+					(@Html.DisplayFor(model => model.AWinRateInStanceOverall)%)
+				</td>
+				<td>
+					@Html.DisplayFor(model => model.AGamesRecordedOverall)
+				</td>
+            </tr>
+        </table>
+    </div>
+    <hr />
+
+    if (RestaurantReview.Validators.AdminAuthorize.isAdmin())
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <h4>Who won this fight?</h4>
+                    @Html.RadioButtonFor(model => Model.Winner, 0) @Model.Defender.Name
+                    <br />
+                    @Html.RadioButtonFor(model => Model.Winner, 1) @Model.Attacker.Name
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add to stats" class="btn btn-default" />
+            </div>
+        </div>
+    }
+    else
+    {
+        @Html.ActionLink("New Fight", "GetInfo", new { }, new { @class = "btn btn-default" })
+    }
+}

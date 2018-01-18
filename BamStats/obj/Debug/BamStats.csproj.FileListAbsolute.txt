@@ -1,0 +1,44 @@
+E:\Programming\VS\BamStats\BamStats\bin\BamStats.dll.config
+E:\Programming\VS\BamStats\BamStats\bin\BamStats.dll
+E:\Programming\VS\BamStats\BamStats\bin\BamStats.pdb
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Helpers.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Mvc.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Razor.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.Deployment.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.Razor.dll
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Razor.xml
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.xml
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.Deployment.xml
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Webpages.Razor.xml
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Helpers.xml
+E:\Programming\VS\BamStats\BamStats\bin\System.Web.Mvc.xml
+E:\Programming\VS\BamStats\BamStats\obj\Debug\BamStats.csprojResolveAssemblyReference.cache
+E:\Programming\VS\BamStats\BamStats\obj\Debug\BamStats.dll
+E:\Programming\VS\BamStats\BamStats\obj\Debug\BamStats.pdb
+E:\Programming\VS\BamStats\BamStats\bin\EntityFramework.dll
+E:\Programming\VS\BamStats\BamStats\bin\EntityFramework.SqlServer.dll
+E:\Programming\VS\BamStats\BamStats\bin\EntityFramework.xml
+E:\Programming\VS\BamStats\BamStats\bin\EntityFramework.SqlServer.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\obj\Debug\BamStats.csprojResolveAssemblyReference.cache
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\obj\Debug\BamStats.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\BamStats.dll.config
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\BamStats.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\BamStats.pdb
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\EntityFramework.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\EntityFramework.SqlServer.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Helpers.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Mvc.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Razor.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.Razor.dll
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\EntityFramework.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\EntityFramework.SqlServer.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Razor.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Webpages.Razor.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Helpers.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\bin\System.Web.Mvc.xml
+C:\Users\Philip.Philip-PC\Documents\Visual Studio 2013\Projects\BAM3\BamStats\obj\Debug\BamStats.pdb

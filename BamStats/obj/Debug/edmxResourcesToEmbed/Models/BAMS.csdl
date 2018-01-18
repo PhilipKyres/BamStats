@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BamFight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Winner" Type="Int32" Nullable="false" />
+    <Property Name="Loser" Type="Int32" Nullable="false" />
+    <Property Name="Stance" Type="Boolean" />
+    <Property Name="FightDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="BamName" Relationship="Self.FK__BamFights__Loser__07C12930" FromRole="BamFights" ToRole="BamNames" />
+    <NavigationProperty Name="BamName1" Relationship="Self.FK__BamFights__Winne__06CD04F7" FromRole="BamFights" ToRole="BamNames" />
+  </EntityType>
+  <EntityType Name="BamName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BamFights" Relationship="Self.FK__BamFights__Loser__07C12930" FromRole="BamNames" ToRole="BamFights" />
+    <NavigationProperty Name="BamFights1" Relationship="Self.FK__BamFights__Winne__06CD04F7" FromRole="BamNames" ToRole="BamFights" />
+  </EntityType>
+  <Association Name="FK__BamFights__Loser__07C12930">
+    <End Role="BamNames" Type="Self.BamName" Multiplicity="1" />
+    <End Role="BamFights" Type="Self.BamFight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BamNames">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BamFights">
+        <PropertyRef Name="Loser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BamFights__Winne__06CD04F7">
+    <End Role="BamNames" Type="Self.BamName" Multiplicity="1" />
+    <End Role="BamFights" Type="Self.BamFight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BamNames">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BamFights">
+        <PropertyRef Name="Winner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BamFights" EntityType="Self.BamFight" />
+    <EntitySet Name="BamNames" EntityType="Self.BamName" />
+    <AssociationSet Name="FK__BamFights__Loser__07C12930" Association="Self.FK__BamFights__Loser__07C12930">
+      <End Role="BamNames" EntitySet="BamNames" />
+      <End Role="BamFights" EntitySet="BamFights" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BamFights__Winne__06CD04F7" Association="Self.FK__BamFights__Winne__06CD04F7">
+      <End Role="BamNames" EntitySet="BamNames" />
+      <End Role="BamFights" EntitySet="BamFights" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

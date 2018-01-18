@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BamModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BamFights">
+      <EntityTypeMapping TypeName="BamModel.BamFight">
+        <MappingFragment StoreEntitySet="BamFights">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Winner" ColumnName="Winner" />
+          <ScalarProperty Name="Loser" ColumnName="Loser" />
+          <ScalarProperty Name="Stance" ColumnName="Stance" />
+          <ScalarProperty Name="FightDate" ColumnName="FightDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BamNames">
+      <EntityTypeMapping TypeName="BamModel.BamName">
+        <MappingFragment StoreEntitySet="BamNames">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<BamStats.Models.BamFight>
+
+@{
+    ViewBag.Title = "Fights";
+}
+
+<h2>Fight History</h2>
+
+<p>
+    @if (RestaurantReview.Validators.AdminAuthorize.isAdmin())
+    {
+        <span>@Html.ActionLink("Record New Fight", "GetInfo") | </span>
+        <span>@Html.ActionLink("Submit Old Fight", "Create") | </span>
+    }
+    Total Games: @ViewBag.Total |
+    <span style="background-color: #bfefff">
+        &nbspDefence WinRate: @ViewBag.D%
+    </span>
+    &nbsp|
+    <span style="background-color: #ffb6c1">
+        &nbspAttack WinRate: @ViewBag.A%&nbsp
+    </span>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Winner
+        </th>
+        <th>
+            Loser
+        </th>
+        <th>
+            Fight Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @if (item.Stance != null)
+            {
+                if (item.Stance == false)
+                {
+                    <span style="background-color: #bfefff">
+                        @Html.DisplayFor(modelItem => item.BamName1.Name) (Defence)
+                    </span>
+                }
+                else
+                {
+                    <span style="background-color: #ffb6c1">
+                        @Html.DisplayFor(modelItem => item.BamName1.Name) (Attack)
+                    </span>
+                }
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.BamName1.Name)
+            }
+        </td>
+        <td>
+            @if (item.Stance != null)
+            {
+                if (item.Stance == true)
+                {
+                    <span style="background-color: #bfefff">
+                        @Html.DisplayFor(modelItem => item.BamName.Name) (Defence)
+                    </span>
+                }
+                else
+                {
+                    <span style="background-color: #ffb6c1">
+                        @Html.DisplayFor(modelItem => item.BamName.Name) (Attack)
+                    </span>
+                }
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.BamName.Name)
+            }
+        </td>
+        <td>
+            @item.FightDate.ToString("MMMM dd, yyyy")
+        </td>
+        @if (RestaurantReview.Validators.AdminAuthorize.isAdmin())
+        {
+            <td>
+                <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) | </span>
+                <span>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</span>
+            </td>
+        }
+    </tr>
+}
+
+</table>

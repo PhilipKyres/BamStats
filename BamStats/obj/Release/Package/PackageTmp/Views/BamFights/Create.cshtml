@@ -1,0 +1,62 @@
+﻿@model BamStats.Models.BamFight
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>BamFight</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Winner, "Winner", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Winner", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Winner, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Loser, "Loser", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Loser", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Loser, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Stance, "Stance of Winner", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+                @Html.RadioButtonFor(model => Model.Stance, false) Defender
+                <br />
+                @Html.RadioButtonFor(model => Model.Stance, true) Attacker
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FightDate, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.FightDate)
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.Label("Count", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.TextBox("count", 1, htmlAttributes: new { @type = "number" })
+			</div>
+		</div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
